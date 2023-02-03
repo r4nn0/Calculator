@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import com.example.ipp.databinding.ActivityMainBinding
+import android.widget.Button
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,8 +19,12 @@ class MainActivity : AppCompatActivity() {
 
         // Example of a call to a native method
         binding.sampleText.text = stringFromJNI()
-    }
 
+        val btn =  findViewById(R.id.btnTest) as Button
+        btn.setOnClickListener{
+            Toast.makeText(this@MainActivity, "Hello world", Toast.LENGTH_SHORT).show()
+        }
+    }
     /**
      * A native method that is implemented by the 'ipp' native library,
      * which is packaged with this application.
